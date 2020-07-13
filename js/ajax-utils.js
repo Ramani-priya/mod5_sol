@@ -5,11 +5,11 @@ var ajaxUtils = {};
 
 
 // Returns an HTTP request object
-function getRequestObject() {
-  if (window.XMLHttpRequest) {
+    function getRequestObject() {
+        if (global.XMLHttpRequest) {
     return (new XMLHttpRequest());
   } 
-  else if (window.ActiveXObject) {
+        else if (global.ActiveXObject) {
     // For very old IE browsers (optional)
     return (new ActiveXObject("Microsoft.XMLHTTP"));
   } 
@@ -31,7 +31,7 @@ ajaxUtils.sendGetRequest =
                        isJsonResponse); 
       };
     request.open("GET", requestUrl, true);
-    request.send(null); // for POST only
+    //request.send(null); // for POST only
   };
 
 
